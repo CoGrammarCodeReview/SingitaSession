@@ -1,0 +1,279 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: #1a0841;
+}
+
+p {
+	font-size: 1em;
+  margin-bottom: 1.2em;
+}
+
+h2,
+h3 {
+  color: #1a0841;
+}
+
+h2,
+h3 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation
+For both main page & subpages ---- */
+
+.name a,
+.main-nav a {
+	text-align: center;
+  display: block;
+}
+
+.name a {
+  color: #1a0841;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #1a0841;
+	text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 0;
+  opacity: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.main-nav a:hover {
+  color: #4f9da6;
+  opacity: 0.6;
+}
+
+.dropdown-content,
+.dropdown-content2,
+.dropdown-content {
+  display: none;
+  font-weight: bolder;
+  border: 3px solid #c8dff5;
+  background-color: #4d84e2;
+  
+}
+
+/* ---- Layout Containers
+For the main page only ---- */
+
+.main-header {
+  margin: 0 0;
+  padding: 25px 50px 45px;
+  background: #ffad5a;
+}
+
+.main-footer {
+	background: #ffad5a;
+	padding: 2em 0;
+  text-align: center;
+}
+
+.columngeneral {
+  margin-top: 0;
+}
+
+.overviewCentered {
+  text-align: center;
+}
+
+	/* ---- Float clearfix ---- */
+
+	.clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+@media (min-width: 1110px) {
+
+  /* ---- Navigation
+  For the main page & subpages ---- */
+  
+  .name {
+    font-size: 1.25em;
+    display: inline-block;
+    float: left;
+  }
+  
+  .main-nav {
+    display: block !important;
+  }
+  
+  .main-nav a {
+    font-size: .95em;
+    color: #1a0841;
+    text-transform: uppercase;
+    display: inline-block;
+    float: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    opacity: 1;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  .main-nav a:hover {
+    opacity: 0.6;
+  }
+  
+  .main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: -5px;
+    background-color:  #4d84e2;
+    padding: 25px 50px 25px;
+    z-index: 21;
+  }
+  
+  li.dropdown {
+    float: right;
+  }
+  
+  .dropdown-content,
+  .dropdown-content2,
+  .dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+    top: 72px;
+  }
+  
+  .dropdown-content a,
+  .dropdown-content2 a{
+    color: #ff5959;
+    padding: 12px 16px;
+    font-size: 0.75em;
+    text-decoration: none;
+  }
+  
+  .main-nav a:nth-child(even) {
+    color: #4f9da6;
+  }
+  
+  .dropdown-content a:hover,
+  .dropdown-content2 a:hover,
+  .dropdown-content3 a:hover {
+    background: white;
+  }
+  
+  .dropdown:hover .dropdown-content,
+  .dropdown:hover .dropdown-content2,
+  .dropdown:hover .dropdown-content3 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .icon {
+    display: none;
+  }
+
+
+
+/*-- Main Page Containers --*/
+
+.secondary-col {
+  float: left;
+  width: 50%;
+  display: inline-block;
+  padding: 0 30px;
+  background: #ffffff;
+  text-align: justify;
+}
+
+.tertiary-col {
+  float: right;
+  width: 50%;
+  display: inline-block;
+  padding: 0 30px;
+  background: #ffffff;
+}
+
+.columngeneral {
+  margin-top: 30px 0;
+  padding-top: 30px;
+}
+
+.overviewCentered {
+  text-align: center;
+}
+
+.overviewBulk {
+  font-size: .85em;
+  text-align: left;
+}
+
+.banner {
+  padding-top: 65px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+  
+.main-footer {
+	background-color:  #4d84e2;
+	padding: 2em 0;
+	margin-top: 30px;
+  text-align: center;
+}
+
+.mainHeading {
+  text-align: center;
+}
+
+#announcementBanner {
+  background: #ffcdcd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 2px solid #ffeeee;
+  border-bottom: 2px solid #ffeeee;
+}
+
+}

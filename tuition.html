@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Tuition</title>
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style_Tuition.css">
+</head>
+<body>
+  
+
+  <div>
+    <header class="main-header">
+      <h1 class="name"><a href="index.html">HOME</a></h1>
+      <ul class="main-nav">
+          <a href="classes.html">Classes</a>
+        <li class="dropdown">
+          <a id="about_enroll" href="#about_enroll" onclick="mySubmenuFunction2();">Enroll</a>
+          <div class="dropdown-content2">
+            <a href="tuition.html">Tuition</a>
+          </div>
+        </li>
+		<li class="dropdown">
+		  <a id="about_download" href="#about_download" onclick="mySubmenuFunction3();">Download Registration</a>
+		  <div class="dropdown-content3">
+      <a href="./Registration document/Childcare Facilities Registration Form.pdf " download="Adventure Time Registration">Download PDF</a>
+		  </div>
+		</li>
+      </ul>
+    </header>
+  </div>
+  <!--Navigation Menu-->
+
+  <!--Banner with daycare logo.-->
+  <div class="banner">
+    <img src="./img/logo1.png" alt="daycare">
+  </div>
+
+      <h2 class="subpageHeading">Tuition at Adventure Time Daycare</h2>
+      <br/>
+      
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3">Tuition Rates</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Program</td>
+          <td>Weekly Rate</td>
+          <td>Daily Rate</td>
+        </tr>
+
+        <tr>
+          <td>Infants</td>
+          <td>R200 per week</td>
+          <td>R50 per day</td>
+        </tr>
+
+        <tr>
+          <td>Younger Toddler</td>
+          <td>R180 per week</td>
+          <td>R50 per day</td>
+        </tr>
+
+        <tr>
+          <td>Older Toddler</td>
+          <td>R150 per week</td>
+          <td>R50 per day</td>
+        </tr>
+
+        <tr>
+          <td>Preschool</td>
+          <td>R140 per week</td>
+          <td>R50 per day</td>
+        </tr>
+
+        <tr>
+          <td>School Age</td>
+          <td>R130 per week</td>
+          <td>R50 per day</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br/>
+    <div class="header">
+      <section id="tuitionAmount">Tuition Calculator</section>
+      <br />
+      <section id="outputCalc"></section>
+      <br />
+      </div>
+  
+  
+  
+      <div class="groupOfButtons">
+        <div class="buttons_one">
+          <section class="dailyRate">
+              <section id="buttons">
+      <button type="button" id="addDailyRate" onclick="addDailyRate();">+</button>
+      <button type="button" id="minusDailyRate" onclick="minusDailyRate();">-</button>
+              </section>
+      One Day's Tuition
+      <br/>
+      Number of Days: <section id="numberOfDays"></section>
+          </section>
+      <br />
+      
+  
+          <section class="infantRate">
+              <section id="buttons">
+      <button type="button" id="addInfantWeekly" onclick="addInfantWeekly();">+</button>
+      <button type="button" id="minusInfantWeekly" onclick="minusInfantWeekly();">-</button>
+              </section>
+      Infant's Weekly Tuition
+      <br/>
+      Number of Infants: <section id="numberOfInfants"></section>
+          </section>
+      <br />
+      
+  
+          <section class="youngToddlerRate">
+              <section id="buttons">
+      <button type="button" id="addYoungToddlerWeekly" onclick="addYoungToddlerWeekly();">+</button>
+      <button type="button" id="minusYoungToddlerWeekly" onclick="minusYoungToddlerWeekly();">-</button>
+              </section>
+      Young Toddler's Weekly Tuition
+      <br/>
+      Number of Young Toddlers: <section id="numberOfYoungToddlers"></section>
+          </section>
+        </div>
+      <br />
+  
+        <div class="buttons_two">
+          <section class="oldToddlerRate">
+              <section id="buttons">
+      <button type="button" id="addOlderToddlerWeekly" onclick="addOldToddlerWeekly();">+</button>
+      <button type="button" id="minusOlderToddlerWeekly" onclick="minusOldToddlerWeekly();">-</button>
+              </section>
+      Older Toddler's Weekly Tuition
+      <br/>
+      Number of Older Toddlers: <section id="numberOfOldToddlers"></section>
+          </section>
+      <br />
+  
+  
+          <section class="preschoolRate">
+              <section id="buttons">
+      <button type="button" id="addPreschoolersWeekly" onclick="addPreschoolWeekly();">+</button>
+      <button type="button" id="minusPreschoolersWeekly" onclick="minusPreschoolWeekly();">-</button>
+              </section>
+      Preschooler's Weekly Tuition
+      <br/>
+      Number of Preschoolers: <section id="numberOfPreschoolers"></section>
+          </section>
+      <br />
+  
+  
+          <section class="schoolAgeRate">
+              <section id="buttons">
+      <button type="button" id="addSchoolagedWeekly" onclick="addSchoolAgeWeekly();">+</button>
+      <button type="button" id="minusSchoolagedWeekly" onclick="minusSchoolAgeWeekly();">-</button>
+              </section>
+      School-aged Child's Tuition
+      <br/>
+      Number of School-aged Children: <section id="numberOfSchoolAge"></section>
+          </section>
+        </div>
+    <br/>
+    </div>
+
+    <section class="accordionList">
+      <div>
+        <input id="ac-1" name="accordion-1" type="checkbox" />
+        <label for="ac-1">Tuition Terms</label>
+        <article class="tuition-one">
+          <p>
+            &#9830;Payment must be received prior to the first day your child attends. Thereafter, tuition is due at the beginning of each week. When withdrawing your child from Adventure Time Daycare, a written one-week notice is required. If no notice is given, you will be required to pay tuition for the additional week. 
+            <br/>
+            <br/>
+            &#9830; Tuition is based on enrollment NOT attendance. Full payment is required for weekly students even if the child is not in attendance, regardless of absences or closings.
+            <br/>
+            <br/>
+            &#9830; Parents are required to check each child in and out every day. Children who are not properly checked in will not be covered under our insurance. Children cannot check themselves in/out of the daycare
+            <br/>
+            <br/>
+            &#9830; If fees are not paid by Wednesday morning at 11:00 AM a R50.00 late fee will be added.
+            <br/>
+            <br/>
+            &#9830; If fees are not paid by Friday morning at 11:00 AM an additional R50 late fee will be added.
+            <br/>
+            <br/>
+            &#9830; Non-payment of tuition is grounds for immediate dismissal from the daycare.
+            <br/>
+            <br/>
+            &#9830; Children are allowed to stay a maximum of 10 hours per day.
+          </p>
+        </article>
+      </div>
+    </section>
+
+      <!--Footer distinguishing the web developer/author.-->
+      <footer class="main-footer clearfix">
+        <span>&copy;2021 Adventure Time TM.</span>
+      </footer>
+  <!--Footer-->
+  
+  <script src="script_tuition.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,544 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: #1a0841;
+}
+
+p {
+	font-size: .95em;
+  margin-bottom: 1.2em;
+}
+
+h2,
+h3 {
+	color:  #4d84e2;
+  ;
+}
+
+h2,
+h3 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation
+For both main page & subpages ---- */
+
+.name a,
+.main-nav a {
+	text-align: center;
+  display: block;
+}
+
+.name a {
+  color: #1a0841;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #1a0841;
+	text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 0;
+  opacity: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.main-nav a:hover {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.dropdown-content,
+.dropdown-content2 {
+  display: none;
+  font-weight: bolder;
+  border: 3px solid #c8dff5;
+  background-color: #4d84e2;
+}
+
+.hamburgerIcon {
+  height: 50px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 20px;
+}
+
+
+/* -- Photo Hover Gallery Animation -- */
+
+.view-effect img { 
+  transition: all 0.2s linear;
+}
+
+.view-effect .mask {
+  opacity: 0;
+  background-color: #4d84e2; 
+  transition: all 0.4s ease-in-out;
+}
+
+.view-effect h2 {
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-effect p { 
+  transform: translateY(100px);
+  opacity: 0;
+transition: all 0.2s linear;
+}
+
+.view-effect a.info{
+  opacity: 0;
+transition: all 0.2s ease-in-out;
+}
+
+.view-effect:hover img { 
+	transform: scale(1.1);
+}
+
+.view-effect:hover .mask { 
+	opacity: 1;
+}
+
+.view-effect:hover h2,
+.view-effect:hover p,
+.view-effect:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.view-effect:hover p {
+    transition-delay: 0.1s;
+}
+
+.view-effect:hover a.info {
+    transition-delay: 0.2s;
+}
+
+
+/*-- Accordion CSS --*/
+
+.accordionList{
+	width: 400px;
+  margin: 10px auto 30px auto;
+}
+
+.accordionList label {
+  padding: 5px 20px;
+  position: relative;
+	z-index: 20;
+	display: block;
+	height: 40px;
+	cursor: pointer;
+	color: #1a0841;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 19px;
+	background: #ffba76;
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		1px 0px 0px 0px rgba(255,255,255,0.9) inset, 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.accordionList label:hover {
+  background: #ffad5a;
+}
+
+.accordionList input:checked + label,
+.accordionList input:checked + label:hover{
+	background: #f1a14e;
+	color: #1a0841;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.accordionList input{
+	display: none;
+}
+
+.accordionList article{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+	transition: 
+		height 0.3s ease-in-out, 
+		box-shadow 0.6s linear;
+}
+
+.accordionList input:checked ~ article {
+	transition: 
+		height 0.5s ease-in-out, 
+		box-shadow 0.1s linear;
+	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+}
+
+.accordionList article p {
+	font-style: italic;
+	color: #777;
+	line-height: 16px;
+	font-size: 0.75em;
+	padding: 20px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+.accordionList input:checked ~ article.ac-one {
+	height: 850px;
+}
+
+.accordionList input:checked ~ article.ac-two {
+	height: 995px;
+}
+
+.accordionList input:checked ~ article.ac-three {
+	height: 450px;
+}
+
+.accordionList input:checked ~ article.ac-four {
+  height: 375px;
+}
+
+.accordionList input:checked ~ article.ac-five {
+  height: 600px;
+}
+
+.accordionList input:checked ~ article.tuition-one {
+  height: 650px;
+}
+
+/*-- Photo Hover Gallery --*/
+
+.photoSideways {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.view {
+  width: 500px;
+  height: 300px;
+  margin: 2px;
+  display: inline-block;
+  border: 10px solid #fff;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
+}
+
+.view .mask, .view .content {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.view img {
+  display: block;
+  position: relative;
+}
+
+.view h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  margin: 20px 0 0 0
+}
+
+.view p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.90em;
+  position: relative;
+  color: #1a0841;
+  padding: 10px 50px 10px 30px;
+  text-align: center
+}
+
+.view a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px #000
+}
+.view a.info:hover {
+  box-shadow: 0 0 5px #000
+}
+
+/* -- Photo Hover Gallery Animation -- */
+
+.view-effect img { 
+  transition: all 0.2s linear;
+}
+
+.view-effect .mask {
+  opacity: 0;
+  background-color: #4d84e2;
+  transition: all 0.4s ease-in-out;
+}
+
+.view-effect h2 {
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-effect p { 
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.view-effect a.info{
+  opacity: 0;
+transition: all 0.2s ease-in-out;
+}
+
+.view-effect:hover img { 
+	transform: scale(1.1);
+}
+
+.view-effect:hover .mask { 
+	opacity: 1;
+}
+
+.view-effect:hover h2,
+.view-effect:hover p,
+.view-effect:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.view-effect:hover p {
+    transition-delay: 0.1s;
+}
+
+.view-effect:hover a.info {
+    transition-delay: 0.2s;
+}
+
+	/* ---- Float clearfix ---- */
+
+	.clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+@media (min-width: 1110px) {
+
+  /* ---- Navigation
+  For the main page & subpages ---- */
+  
+  .name {
+    font-size: 1.25em;
+    display: inline-block;
+    float: left;
+  }
+  
+  .main-nav {
+    display: block !important;
+  }
+  
+  .main-nav a {
+    font-size: .95em;
+    color: #1a0841;
+    text-transform: uppercase;
+    display: inline-block;
+    float: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    opacity: 1;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  .main-nav a:hover {
+    opacity: 0.6;
+  }
+  
+  .main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: -5px;
+    background-color: #4d84e2;
+    padding: 25px 50px 25px;
+    z-index: 21;
+  }
+  
+  li.dropdown {
+    float: right;
+  }
+  
+  .dropdown-content,
+  .dropdown-content2,
+  .dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+    top: 72px;
+  }
+  
+  .dropdown-content a,
+  .dropdown-content2 a,
+  .dropdown-content3 a {
+    color: #ff5959;
+    padding: 12px 16px;
+    font-size: 0.75em;
+    text-decoration: none;
+  }
+  
+  .main-nav a:nth-child(even) {
+    color: #4f9da6;
+  }
+  
+  .dropdown-content a:hover,
+  .dropdown-content2 a:hover,
+  .dropdown-content3 a:hover {
+    background: white;
+  }
+  
+  .dropdown:hover .dropdown-content,
+  .dropdown:hover .dropdown-content2,
+  .dropdown:hover .dropdown-content3 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .icon {
+    display: none;
+  }
+
+  /* ---- Layout Containers
+For the subpages ---- */
+
+.teamDirectors {
+  font-size: 1.10em;
+}
+
+#enroll_career {
+  display: flex;
+  flex-direction: row;
+}
+
+.enrollYourChild {
+  padding-left: 2%;
+}
+
+/*-- Main Page Containers --*/
+
+.secondary-col {
+  float: left;
+  width: 50%;
+  display: inline-block;
+  padding: 0 30px;
+  background: #ffffff;
+  text-align: justify;
+}
+
+.tertiary-col {
+  float: right;
+  width: 50%;
+  display: inline-block;
+  padding: 0 30px;
+  background: #ffffff;
+}
+
+.columngeneral {
+  margin-top: 30px 0;
+  padding-top: 30px;
+}
+
+.overviewCentered {
+  text-align: center;
+}
+
+.overviewBulk {
+  font-size: .85em;
+  text-align: left;
+}
+
+.googleForm {
+  background: #ffbcbc;
+  border-radius: 5%
+}
+
+.banner {
+  padding-top: 80px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+  
+.main-footer {
+	background: #4d84e2;
+	padding: 2em 0;
+	margin-top: 30px;
+  text-align: center;
+}
+
+.mainHeading {
+  text-align: center;
+}
+}
