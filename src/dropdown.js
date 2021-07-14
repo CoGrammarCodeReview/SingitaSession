@@ -7,13 +7,9 @@ class Dropdown {
 
     show() {
         if (this.#dropdownContent.hovered === true)
-        {   const options = [
-            "Register",
-            "Inquire",
-            "Info"
-            ]
+        {   
             const expectedOutput = 
-                `<ol>${options.map(option => `<li>${option}</li\n`)}</ol>`
+                `<ol>${this.#dropdownContent.options.map(option => `<li>${option}</li\n`)}</ol>`
             return expectedOutput
         }
         else return ""

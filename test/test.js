@@ -42,5 +42,24 @@ describe('Dropdown', function() {
       const expectedOutput = ""
       assert.equal(dropdown.show(), expectedOutput)
   });
+
+  it('The user does not see the same options for the same dropdown', function() {
+    const options = [
+      "Visit",
+      "Trial",
+      "Call"
+    ]
+    const dropdownContent = {
+      link: "/showUserOptions",
+      id: "userOptions",
+      hovered: true,
+      options: options
+    }
+
+    const dropdown = new Dropdown(dropdownContent)
+
+    const expectedOutput = `<ol>${options.map(option => `<li>${option}</li\n`)}</ol>`
+    assert.equal(dropdown.show(), expectedOutput)
+});
   });
 });
