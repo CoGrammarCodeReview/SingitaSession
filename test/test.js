@@ -22,7 +22,25 @@ describe('Dropdown', function() {
         const expectedOutput = 
           `<ol>${options.map(option => `<li>${option}</li\n`)}</ol>`
         assert.equal(dropdown.show(), expectedOutput)
-      // assert.equal([1, 2, 3].indexOf(4), -1);
     });
+
+    it('When the user has not hovered over a link it should not show them options', function() {
+      const options = [
+        "Register",
+        "Inquire",
+        "Info"
+      ]
+      const dropdownContent = {
+        link: "/showUserOptions",
+        id: "userOptions",
+        hovered: false,
+        options: options
+      }
+
+      const dropdown = new Dropdown(dropdownContent)
+
+      const expectedOutput = ""
+      assert.equal(dropdown.show(), expectedOutput)
+  });
   });
 });
