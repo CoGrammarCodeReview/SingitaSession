@@ -3,5 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/singita585/Adventure-Time-DayCare-Center.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
 }
