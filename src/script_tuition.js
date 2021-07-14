@@ -1,10 +1,29 @@
+const Dropdown = require('./dropdown')
+  
   function mySubmenuFunction() {
-    var x = document.getElementsByClassName('dropdown-content')[0];
+    const options = [
+      "Classes",
+      "Tuition",
+      "Registration"
+    ]
+    const dropdownContent = {
+      link: "/showUserOptions",
+      id: "userOptions",
+      hovered: false,
+      options: options
+    };
+    const dropdown = new Dropdown(dropdownContent);
     if (x.style.display === "block") {
+      dropdownContent.hovered = false
       x.style.display = "none";
     } else {
+      dropdownContent.hovered = true
       x.style.display = "block";
     }
+    const dropdown = new Dropdown(dropdownContent);
+    const displayed = dropdown.show()
+    const element = document.getElementsByClassName('dropdown-content')[0];
+    element.innerHTML = displayed
   }
 
   function mySubmenuFunction2() {
